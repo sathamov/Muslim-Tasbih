@@ -1,0 +1,112 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../img/background-img3.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.container{
+    width: 550px;
+    height: 550px;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.container h1{
+    letter-spacing: 5px;
+    font-size: 50px;
+    margin-bottom: 50px;
+    background-image: linear-gradient(to right, #fff, crimson, #fff,crimson);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    background-size: 300%;
+    background-position: -100%;
+
+    animation: animatedText 3s infinite alternate-reverse;
+}
+
+@keyframes animatedText{
+    to{
+        background-position: 100%;
+    }
+}
+
+#value{
+    font-size: 150px;
+    background-color: #fff;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    opacity: 50%;
+    border-radius: 10px;
+    width:400px;
+    
+ 
+}
+.button-container{
+    margin-top: 90px;
+  
+}
+.button-container .btn{
+    padding: 10px 20px;
+    font-size: 20px;
+    margin: 18px;
+    border: none;
+    background-color:#fff;
+    color: crimson;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.btn:hover{
+    background-color: crimson;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+    border: none;
+    box-shadow: 0 0 15px darkred;
+}
+
+/*pulsing animation*/
+
+.pulsing{
+    position: relative;
+    top: -170px;
+    left: 80px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff056d;
+    box-shadow: 0 0 0 0 #ff056da8;
+    animation: pulsing 1.5s linear infinite;
+}
+@keyframes pulsing {
+    100% {
+        box-shadow: 0 0 0 20px #ff056d0c;
+        filter: hue-rotate(360deg);
+    }
+    0%{
+        filter: hue-rotate(0deg);
+    }
+}
+.pulsing::before, .pulsing::after{
+    position: absolute;
+    content: "";
+    box-shadow: 0 0 0 0 #ff056d6d;
+    border-radius: inherit;
+    inset: 0;
+    animation: inherit;
+}
+.pulsing::after{
+    animation-delay: -1s;
+
+}
